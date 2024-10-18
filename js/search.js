@@ -30,17 +30,17 @@
 //   });
 // });
 
-document.getElementById('searchForm').addEventListener('submit', function (event) {
-  event.preventDefault();
+// document.getElementById('searchForm').addEventListener('submit', function (event) {
+//   event.preventDefault();
 
-  // Get search term and filter values
-  const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-  const yearFilter = document.getElementById('yearFilter').value;
-  const typeFilter = document.getElementById('typeFilter').value;
+//   // Get search term and filter values
+//   const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+//   const yearFilter = document.getElementById('yearFilter').value;
+//   const typeFilter = document.getElementById('typeFilter').value;
 
-  // Filter results
-  filterResults(searchTerm, yearFilter, typeFilter);
-});
+//   // Filter results
+//   filterResults(searchTerm, yearFilter, typeFilter);
+// });
 
 function filterResults(searchTerm, year, type) {
   const resultsContainer = document.getElementById('resultsContainer');

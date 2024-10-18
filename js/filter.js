@@ -1,15 +1,15 @@
 // Tangkap elemen-elemen penting
-const searchForm = document.getElementById('searchForm');
+// const searchForm = document.getElementById('searchForm');
 const searchInput = document.getElementById('searchInput');
 const yearFilter = document.getElementById('yearFilter');
 const typeFilter = document.getElementById('typeFilter');
 const cards = document.querySelectorAll('.card-item');
 
 // Event listener ketika form disubmit
-searchForm.addEventListener('submit', function (event) {
-  event.preventDefault();
-  applyFilters();
-});
+// searchForm.addEventListener('submit', function (event) {
+//   event.preventDefault();
+//   applyFilters();
+// });
 
 // Fungsi untuk melakukan filtering
 function applyFilters() {

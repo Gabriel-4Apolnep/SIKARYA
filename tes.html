@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Item - Card Item</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        select {
+            margin-bottom: 20px;
+            padding: 8px;
+            font-size: 16px;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 10px;
+            width: 150px;
+            text-align: center;
+            transition: box-shadow 0.3s;
+        }
+        .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Daftar Item</h1>
+    <label for="categoryFilter">Pilih Kategori:</label>
+    <select id="categoryFilter" onchange="filterByCategory()">
+        <option value="all">Semua</option>
+        <option value="buah">Buah</option>
+        <option value="sayur">Sayur</option>
+    </select>
+
+    <div class="card-container" id="itemList">
+        <div class="card" data-category="buah">
+            <h3>Apel</h3>
+            <p>Segar dan manis.</p>
+        </div>
+        <div class="card" data-category="buah">
+            <h3>Jeruk</h3>
+            <p>Asam dan menyegarkan.</p>
+        </div>
+        <div class="card" data-category="sayur">
+            <h3>Wortel</h3>
+            <p>Baik untuk mata.</p>
+        </div>
+        <div class="card" data-category="buah">
+            <h3>Pisang</h3>
+            <p>Enak dan bergizi.</p>
+        </div>
+        <div class="card" data-category="sayur">
+            <h3>Kubis</h3>
+            <p>Sehat dan bergizi.</p>
+        </div>
+        <div class="card" data-category="buah">
+            <h3>Anggur</h3>
+            <p>Manis dan lezat.</p>
+        </div>
+    </div>
+
+    <script>
+        function filterByCategory() {
+            const selectedCategory = document.getElementById('categoryFilter').value;
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const itemCategory = card.getAttribute('data-category');
+
+                if (selectedCategory === 'all' || itemCategory === selectedCategory) {
+                    card.style.display = ""; // Tampilkan item
+                } else {
+                    card.style.display = "none"; // Sembunyikan item
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

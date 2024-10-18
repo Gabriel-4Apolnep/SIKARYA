@@ -578,7 +578,7 @@ footer {
   align-items: flex-start;
   justify-content: space-evenly;
   padding: 0 10%;
-  height: 100vh;
+  height: 80vh;
   gap: 200px;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -757,4 +757,28 @@ img {
   .column {
     width: 33.33%;
   }
+}
+.rating-head{
+  text-align: center;
+}
+.rating {
+  direction: rtl; /* Untuk memulai dari kanan ke kiri */
+  unicode-bidi: bidi-override;
+  text-align: center;
+  font-size: 30px;
+}
+
+.rating .star {
+  cursor: pointer;
+  color: grey;
+}
+
+.rating .star:hover, .rating .star:hover ~ .star {
+  color: gold;
+}
+
+#rating-value, #numeric-rating {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
 }

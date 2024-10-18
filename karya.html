@@ -41,16 +41,7 @@
             <li><a href="login/login.html">Login</a></li>
           </ul>
         </div>
-        <!-- <div class="search-box">
-          <i class="bx bx-search"></i>
-          <div class="input-box">
-            <input
-              type="text"
-              placeholder="Search..."
-            />
-          </div> -->
         </div>
-      </div>
     </nav>
     <script src="js/navbar.js"></script>
     <!-- Header Section End -->
@@ -65,12 +56,13 @@
     
         <!-- Search and Filter Section Start -->
         <section class="search-filter-container">
-          <form id="searchForm">
+          <!-- <form id="searchform"> -->
             <div class="search-bar">
               <input
                 type="text"
                 placeholder="Search for works..."
                 id="searchInput"
+                onchange="filterByCategory()"
               />
               <button type="submit">
                 <i class="fas fa-search"></i>
@@ -79,8 +71,8 @@
     
             <div class="filter-options">
               <!-- Filter by Year -->
-              <select id="yearFilter">
-                <option value="">All Years</option>
+              <select id="yearFilter" onchange="filterByCategory()">
+                <option value="all">All Years</option>
                 <option value="2024">2024</option>
                 <option value="2023">2023</option>
                 <option value="2022">2022</option>
@@ -88,125 +80,78 @@
               </select>
     
               <!-- Filter by Type -->
-              <select id="typeFilter">
-                <option value="">All Types</option>
-                <option value="thesis">Tugas Akhir</option>
+              <select id="typeFilter" onchange="filterByCategory()">
+                <option value="all">All Types</option>
+                <option value="TA">Tugas Akhir</option>
                 <option value="pbl">PBL</option>
-                <option value="final_project">Final Project</option>
+                <option value="pencapaian">Final Project</option>
               </select>
     
               <button type="submit" class="filter-btn">Apply Filters</button>
             </div>
-          </form>
+          <!-- </form> -->
         </section>
         <!-- Search and Filter Section End -->
 
         <div class="card-list">
-          <a
-            href="detail/detail.html"
-            class="card-item"
-          >
-            <img
-              src="assets/aplikasi locator.png"
-              alt="Card Image"
-            />
-            <h3>Aplikasi Family Locator</h3>
-            <div class="arrow">
-              <i class="fas fa-arrow-right card-icon"></i>
-            </div>
+          <a href="detail/detail.html" class="card-item" data-type="pbl" data-year="2024">
+              <img src="assets/aplikasi locator.png" alt="Card Image" />
+              <h3>Aplikasi Family Locator</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
           </a>
-          <a
-            href="detail/detail2.html"
-            class="card-item"
-          >
-            <img
-              src="assets/karya01.png"
-              alt="Card Image"
-            />
-            <h3>Rancang bangun Website SMA NEGERI 1 RASAU JAYA</h3>
-            <div class="arrow">
-              <i class="fas fa-arrow-right card-icon"></i>
-            </div>
+          <a href="detail/detail2.html" class="card-item" data-type="TA" data-year="2024">
+              <img src="assets/karya01.png" alt="Card Image" />
+              <h3>Rancang bangun Website SMA NEGERI 1 RASAU JAYA</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
           </a>
-          <a
-            href="detail/detail3.html"
-            class="card-item"
-          >
-            <img
-              src="assets/perangkat keras/7.jpg"
-              alt="Card Image"
-            />
-            <h3>Perangkat keras komputer Augmented Reality Di SMK 7 Pontianak</h3>
-            <div class="arrow">
-              <i class="fas fa-arrow-right card-icon"></i>
-            </div>
+          <a href="detail/detail3.html" class="card-item" data-type="pbl" data-year="2023">
+              <img src="assets/perangkat keras/7.jpg" alt="Card Image" />
+              <h3>Perangkat keras komputer Augmented Reality Di SMK 7 Pontianak</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
           </a>
-          <a
-            href="detail/detail4.html"
-            class="card-item"
-          >
-            <img
-              src="assets/covid19.png"
-              alt="Card Image"
-            />
-            <h3>Web Geographic Information covid19</h3>
-            <div class="arrow">
-              <i class="fas fa-arrow-right card-icon"></i>
-            </div>
+          <a href="detail/detail4.html" class="card-item" data-type="pbl" data-year="2023">
+              <img src="assets/covid19.png" alt="Card Image" />
+              <h3>Web Geographic Information covid19</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
           </a>
-          <a
-            href="detail/detail5.html"
-            class="card-item"
-          >
-            <img
-              src="assets/powersupply/6.jpg"
-              alt="Card Image"
-            />
-            <h3>Power Supply Variabel</h3>
-            <div class="arrow">
-              <i class="fas fa-arrow-right card-icon"></i>
-            </div>
+          <a href="detail/detail5.html" class="card-item" data-type="pencapaian" data-year="2022">
+              <img src="assets/powersupply/6.jpg" alt="Card Image" />
+              <h3>Power Supply Variabel</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
           </a>
-          <a
-            href="#"
-            class="card-item"
-          >
-            <img
-              src="assets/karya.jpg"
-              alt="Card Image"
-            />
-            <h3>Karya Ilmiah Mahasiswa</h3>
-            <div class="arrow">
-              <i class="fas fa-arrow-right card-icon"></i>
-            </div>
+          <a href="detail/detail6.html" class="card-item" data-type="pbl" data-year="2022">
+              <img src="assets/Portfolio_Gabriel/pf_1.jpg" alt="Card Image" />
+              <h3>Tugas Portofolio Mahasiswa</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
           </a>
-          <a
-            href="#"
-            class="card-item"
-          >
-            <img
-              src="assets/karya.jpg"
-              alt="Card Image"
-            />
-            <h3>Karya Ilmiah Mahasiswa</h3>
-            <div class="arrow">
-              <i class="fas fa-arrow-right card-icon"></i>
-            </div>
+          <a href="#" class="card-item" data-type="pencapaian" data-year="2024">
+              <img src="assets/karya.jpg" alt="Card Image" />
+              <h3>Karya Ilmiah Mahasiswa</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
           </a>
-          <a
-            href="#"
-            class="card-item"
-          >
-            <img
-              src="assets/karya.jpg"
-              alt="Card Image"
-            />
-            <h3>Karya Ilmiah Mahasiswa</h3>
-            <div class="arrow">
-              <i class="fas fa-arrow-right card-icon"></i>
-            </div>
+          <a href="#" class="card-item" data-type="pencapaian" data-year="2024">
+              <img src="assets/karya.jpg" alt="Card Image" />
+              <h3>Karya Ilmiah Mahasiswa</h3>
+              <div class="arrow">
+                  <i class="fas fa-arrow-right card-icon"></i>
+              </div>
           </a>
-        </div>
+      </div>
+      
       </div>
     </section>
 
@@ -283,6 +228,7 @@
         </center>
       </div>
       <script src="js/filter.js"></script>
+      <script src="js/category.js"></script>
     </footer>
     <!-- Footer Section End -->
   </body>
